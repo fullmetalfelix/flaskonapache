@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gunicorn app:app
+uwsgi -s /tmp/app.sock --manage-script-name --mount /=app:app --plugin python3 
